@@ -1,0 +1,21 @@
+-- -- Enable UUID generation (PostgreSQL >= 13)
+-- CREATE EXTENSION IF NOT EXISTS "pgcrypto";
+--
+-- -- Questions table
+-- CREATE TABLE questions (
+--     question_id UUID PRIMARY KEY, -- Unique identifier for the question
+--     user_id UUID NOT NULL,                                 -- Reference to the User Service
+--     title VARCHAR(255) NOT NULL,                           -- Title of the question
+--     body TEXT NOT NULL,                                    -- Detailed description of the question
+--     tags TEXT[],                                           -- Array of tags related to the question
+--     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,        -- Creation timestamp
+--     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,        -- Last update timestamp
+--     view_count INT DEFAULT 0,                              -- Number of views
+--     upvote_count INT DEFAULT 0,                            -- Number of upvotes
+--     downvote_count INT DEFAULT 0,                          -- Number of downvotes
+--     accepted_answer_id UUID                             -- Reference to the Answer Service
+-- );
+--
+-- -- Indexes for performance optimization
+-- CREATE INDEX idx_questions_created_at ON questions (created_at);
+-- CREATE INDEX idx_questions_user_id ON questions (user_id);
